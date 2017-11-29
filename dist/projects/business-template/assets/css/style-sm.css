@@ -1,0 +1,574 @@
+/*General Settings*/
+
+:root {
+    --light-blue: #709dca;
+    --orange: #ffbb42;
+    --light-grey: #e7edf3;
+    --text-color-dark: #394b50;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+
+/*Higher Order Styling*/
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body,
+h1,
+h2,
+h3,
+p,
+.nav-bar {
+    margin: 0;
+    padding: 0;
+}
+
+input[type="text"],
+button[type="submit"] {
+    border: 0;
+    height: 5vh;
+    border-radius: 2px;
+}
+
+
+/*Text Styling*/
+
+h1,
+h2,
+h3,
+p {
+    text-align: center;
+    color: var(--text-color-dark);
+}
+
+h1,
+h2,
+h3 {
+    text-transform: uppercase;
+}
+
+
+/*Header Styling*/
+
+.header,
+.nav-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.header {
+    width: 100%;
+}
+
+.header .brand {
+    display: inline-block;
+    height: 30px;
+    width: auto;
+    margin: 0 auto;
+}
+
+.nav-bar {
+    width: 80%;
+    height: 7vh;
+    list-style: none;
+    margin: 0 auto;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+}
+
+.nav-item a {
+    display: inline-block;
+    text-decoration: none;
+    color: #868686;
+    font-size: 10px;
+    padding: 5px;
+}
+
+.nav-item:last-child a:last-child {
+    padding-right: 0;
+}
+
+
+/*General Box Sizing*/
+
+.main {
+    min-height: 100%;
+    font-size: 15px;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.row:first-child {
+    background-color: var(--light-blue);
+}
+
+.row:nth-child(3),
+.row:nth-child(6) {
+    background-color: var(--orange);
+}
+
+.row:nth-child(2),
+.row:nth-child(5),
+.row:nth-child(7),
+.row:nth-child(8) {
+    background-color: white;
+}
+
+.row:nth-child(4) {
+    background-color: var(--light-grey);
+}
+
+
+/*Rowtext Styling*/
+
+.row:first-child h1,
+.row:first-child p,
+.row:nth-child(3) h2,
+.row:nth-child(3) p,
+.row:nth-child(6) h2,
+.row:nth-child(6)>p {
+    color: white;
+}
+
+.row:first-child h1,
+.row:nth-child(2) h2,
+.row:nth-child(4) h2,
+.row:nth-child(5) h2,
+.row:nth-child(6) h2,
+.row:nth-child(7) h2 {
+    margin-top: 5%;
+}
+
+
+/*Row 1: Form Styling*/
+
+#macbook {
+    display: none;
+}
+
+.form {
+    display: inherit;
+    flex-direction: inherit;
+    justify-content: inherit;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form input[type="text"] {
+    margin: 10px auto 0;
+    width: inherit;
+    padding-left: 2%;
+}
+
+.row:first-child button[type="submit"] {
+    background-color: var(--orange);
+    color: white;
+    width: inherit;
+    margin: 10px auto;
+}
+
+
+/*Row 2: Carousel Circle Styling*/
+
+.row:nth-child(2) h3 {
+    text-align: left;
+    font-size: .8em;
+    margin: 0 0 5px 0;
+}
+
+.carousel-circles {
+    display: none;
+}
+
+.circle-item {
+    display: none;
+}
+
+
+/*Row 2: Service Item Styling*/
+
+.text-wrap p {
+    font-size: .66em;
+    text-align: left;
+}
+
+.container {
+    margin: 0 2%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.container:first-child,
+.container:nth-child(2) {
+    margin-top: 10px;
+}
+
+.container.service {
+    height: 100%;
+    display: inherit;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.service-row {
+    margin: 10px;
+}
+
+.service-image {
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin: 0 10px 15px;
+}
+
+
+/*Row 3: About Us Styling*/
+
+.row:nth-child(3) {
+    margin-top: 20px;
+}
+
+.row:nth-child(3) h2 {
+    text-align: center;
+    margin: 10px auto;
+}
+
+.row:nth-child(3) p {
+    font-size: .8em;
+    margin: 5% 5%;
+}
+
+.row:nth-child(3) img {
+    width: 100%;
+}
+
+.row:nth-child(3) button[type="submit"] {
+    margin: 0 25% 5%;
+    width: 50%;
+    color: white;
+    background-color: var(--orange);
+}
+
+.row:nth-child(3) button[type="submit"] {
+    border: 1px solid #e7ad48;
+}
+
+
+/*Row 4: Pricingbox Styling*/
+
+.row.pricing {
+    width: 90%;
+    display: inherit;
+    flex-direction: inherit;
+    margin: 20px auto;
+    background-color: var(--light-grey);
+}
+
+.pricing-column {
+    display: inherit;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #ccd5df;
+    padding: 0 10px;
+    width: 100%;
+}
+
+.pricing-column.active {
+    background-color: var(--light-blue);
+    border: 1px solid var(--orange);
+    width: 100%;
+}
+
+.pricing-column span {
+    color: var(--text-color-dark);
+    text-align: center;
+    font-size: .5em;
+    font-weight: 200;
+    text-transform: uppercase;
+}
+
+.pricing-column:nth-child(2) h3,
+.pricing-column:nth-child(2) span {
+    color: white;
+}
+
+.row:nth-child(4) h3:first-child {
+    text-align: left;
+    font-weight: 200;
+    font-size: 100%;
+    width: 25%;
+    margin-right: 10px;
+}
+
+.row:nth-child(4) h3:nth-child(2)::first-letter {
+    vertical-align: super;
+    font-size: 40%;
+}
+
+.row:nth-child(4) h3:nth-child(2) {
+    color: var(--orange);
+    font-size: 200%;
+    font-weight: 500;
+}
+
+.row:nth-child(4) button[type="submit"],
+.pricing-column:nth-child(2) button[type="submit"] {
+    width: 20%;
+    margin: 0;
+    color: white;
+    background-color: var(--orange);
+    border: 0;
+}
+
+
+/*Row 4: Pricing Features Styling*/
+
+.feature-list {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    color: #b5bbc1;
+    height: 100%;
+    margin: 20px;
+}
+
+.feature-list-item {
+    border-top: 1px solid #e2e9f0;
+    padding: 5px;
+    font-size: 50%;
+    text-transform: uppercase;
+}
+
+.pricing-column:nth-child(2) .feature-list-item {
+    border-top: 1px solid #8eb8e2;
+}
+
+.pricing-column:nth-child(2) .feature-list {
+    color: #c2e1ff;
+}
+
+
+/*Row 5: How It Works Styling*/
+
+.text-column h3 {
+    font-weight: 500;
+    border-right: 1px solid var(--orange);
+    padding-right: 10px;
+    align-self: center;
+}
+
+.text-column p {
+    font-size: 80%;
+    margin-left: 10px;
+}
+
+.row:nth-child(5) img {
+    margin: 10px 0;
+    width: 100%;
+    height: 40%;
+}
+
+.text-row {
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-column {
+    width: 80%;
+    margin: 20px;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.row:nth-child(5) button[type="submit"] {
+    width: 30%;
+    color: white;
+    background-color: var(--orange);
+    margin: 5% auto;
+}
+
+
+/*Row 6: Customer Related Styling*/
+
+.customer-row {
+    width: 90%;
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 5%;
+    justify-content: space-between;
+}
+
+.customer-block {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: white;
+    display: inherit;
+    flex-direction: row;
+    justify-content: inherit;
+}
+
+.customer-row:last-child .customer-block:last-child {
+    margin-bottom: 10px;
+}
+
+.customer-picture {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    align-self: center;
+}
+
+
+/*Row 6: Blockquote Styling*/
+
+.quote-block {
+    display: inherit;
+    flex-direction: column;
+    align-self: center;
+    width: 60%;
+}
+
+.quote-block p {
+    font-size: 70%;
+    text-align: left;
+    color: #99a9ae;
+    text-transform: uppercase;
+}
+
+.quote-block p>span {
+    color: var(--orange);
+}
+
+blockquote::before {
+    content: open-quote;
+    margin-left: -10px;
+    font-size: 120%;
+}
+
+blockquote {
+    color: #8d8d8d;
+    font-size: 12px;
+    margin: 0 0 5px 0;
+}
+
+blockquote::after {
+    content: close-quote;
+    margin-left: 5px;
+    vertical-align: -10px;
+    font-size: 120%;
+}
+
+
+/*Row 7: Input & Map Styling*/
+
+.row:nth-child(7) .form {
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.row:nth-child(7) input[type="text"] {
+    border: 1px solid #cbcbcb;
+    margin: 0;
+    padding: 0 0 0 5px;
+}
+
+.row:nth-child(7) input[type="text"]:first-child {
+    width: 25%;
+}
+
+.row:nth-child(7) input[type="text"]:nth-child(2) {
+    width: 40%;
+}
+
+.row:nth-child(7) button[type="submit"] {
+    width: 30%;
+    color: white;
+    background-color: var(--orange);
+}
+
+#map {
+    height: 200px;
+    width: 80%;
+    margin: 0 auto;
+    border-bottom: 1px solid #e3e7ec;
+}
+
+
+/*Row 7: Phone Number & Social Icons Styling*/
+
+.phone-number,
+.social-symbols {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 35%;
+    margin-bottom: 10px;
+}
+
+.social-symbols {
+    width: 30%;
+    margin-bottom: 10px;
+}
+
+.phone-number img,
+.social-symbols img {
+    height: 20px;
+    width: auto;
+}
+
+.social-symbols a,
+.social-symbols img {
+    display: inline-block;
+}
+
+
+/*Footer Styling*/
+
+footer {
+    background-color: var(--light-blue);
+    position: relative;
+    padding: 5px 0;
+    text-align: center;
+    color: white;
+}
+
+

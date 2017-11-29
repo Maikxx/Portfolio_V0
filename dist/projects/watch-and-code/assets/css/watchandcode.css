@@ -1,0 +1,131 @@
+html, body {
+    min-height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #8B0000;
+}
+
+button {
+    border: 1px solid #333333;
+    margin: 0;
+    padding: 10px;
+    background: #333333;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+input[type="text"], input[type="number"] {
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #333333;
+    background: white;
+    font-size: 13px;
+}
+
+.wrapper {
+    margin: 20px auto 0;
+    border: 1px #333333 solid;
+    background-color: white;
+    width: 50vw;
+    -webkit-box-shadow: -5px 7px 23px 1px rgba(0, 0, 0, 1);
+    -moz-box-shadow: -5px 7px 23px 1px rgba(0, 0, 0, 1);
+    box-shadow: -5px 7px 23px 1px rgba(0, 0, 0, 1);
+}
+
+.header {
+    padding: 10px;
+    text-align: center;
+}
+
+.header h1 {
+    color: black;
+    text-align: center;
+    margin: 0;
+}
+
+.main {
+    padding: 0 20px 20px 20px;
+}
+
+.todo-form {
+    background-color: #F6F6F6;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.todo-form p {
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group #addTodoTextButton, .form-group #changeTodoButton, .form-group #toggleCompletedPositionButton, .form-group #changeTodoPositionInput {
+    width: 20%;
+}
+
+.form-group #changeTodoTextInput {
+    width: 40%;
+}
+
+.form-group #addTodoTextInput, .form-group #toggleCompletedPositionInput {
+    width: 70%;
+}
+
+.form-group #toggleAllButton {
+    width: 100%;
+}
+
+.indexHint {
+    margin: 0;
+    font-size: 14px;
+}
+
+.todos {
+    background-color: #333333;
+    min-height: 100px;
+}
+
+.headerTodos {
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 10px 10px 0 10px;
+}
+
+.todo-list {
+    margin: 10px 20px 0 20px;
+    color: white;
+}
+
+li button {
+    margin: 0 0 10px 20px;
+    border: 1px solid white;
+}
+
+.footer {
+    text-align: center;
+    background-color: #333333;
+    color: white;
+}
+
+.footer p {
+    margin: 0;
+    padding: 10px 0;
+}

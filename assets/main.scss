@@ -1,0 +1,604 @@
+@import 'helpers/variables';
+@import 'helpers/mixins';
+
+* {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+  outline: 0;
+  padding: 0
+}
+
+html {
+  &::-webkit-scrollbar {
+    background-color: #4d4d4d;
+    width: 10px
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(52, 152, 219, .5);
+    border-radius: 30px;
+    &:hover {
+      background-color: $mainBlue
+    }
+  }
+}
+
+@import 'components/animations';
+
+body {
+  background: linear-gradient(to right, $mainBlue 0%, $mainPurple 100%);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
+  font-size: 13px;
+  line-height: 1.5
+}
+
+body, a {
+  color: $textColor
+}
+
+h1, h2, h3, label {
+  font-family: 'Nixie One', cursive;
+}
+
+p {
+  & > a {
+    transition-duration: 500ms;
+    &:hover {
+      color: $hoverColor;
+    }
+  }
+}
+
+// All items which have something to do with the header.
+.header {
+  padding: 0 5%;
+  height: 50px;
+  justify-content: space-between;
+
+  &, ul, a {
+    align-items: center;
+    display: flex;
+  }
+
+  a {
+    justify-content: center;
+  }
+
+  .brand > img {
+    align-self: center;
+    height: 50px;
+    width: auto;
+  }
+
+  nav {
+    height: 100%;
+    text-align: right;
+    width: 80%
+  }
+
+  ul {
+    height: inherit;
+    justify-content: space-between;
+    list-style: none;
+
+    li {
+      flex: 1;
+      height: inherit;
+      > a {
+        color: $textColor;
+        height: inherit;
+        letter-spacing: 1px;
+        text-align: center;
+        text-decoration: none;
+        text-transform: uppercase;
+        transition: all 200ms ease-in-out;
+        width: 100%;
+        &:hover {
+          color: $hoverColor;
+        }
+      }
+    }
+  }
+}
+
+// All items which are direct children of a section that is a direct child of main.
+main > .row {
+  width: 100%;
+  margin: 0 auto;
+
+  & > .wrapper {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0 auto;
+    width: 90%;
+
+    & > h1 {
+      font-size: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    & > p {
+      text-align: center;
+    }
+
+    &:first-child > figure {
+      align-items: center;
+      background-color: rgba(255, 255, 255, .8);
+      transform: skewX(-20deg);
+      border-radius: 0 5px 0 5px;
+      display: flex;
+      flex-direction: row;
+      height: 40px;
+      justify-content: space-between;
+      margin: 10px 0;
+      padding: 30px 20px;
+      width: 100%;
+      img {
+        height: inherit;
+        width: 40px;
+        transform: skewX(20deg);
+      }
+    }
+
+    &:first-child, &:last-child {
+      min-height: 95vh;
+    }
+
+    &:first-child > a {
+      height: 20px;
+      img {
+        animation: upAndDown 3000ms ease infinite;
+        height: inherit;
+        margin: 10px auto;
+        width: 20px;
+      }
+    }
+  }
+
+  &#portfolio {
+    margin-top: 30vh;
+  }
+}
+
+// Sections with the class of introduction, which is used at the About Me section of the page.
+.introduction {
+  margin: 5px 0;
+  width: 100%;
+
+  h2 {
+    font-size: 25px;
+    margin-top: 10px;
+    text-align: left;
+  }
+
+  li {
+    list-style-type: none;
+    margin: 5px;
+    text-align: left
+  }
+
+  li:nth-child(2) {
+    @include animation-delay(0);
+  }
+
+  li:nth-child(3) {
+    @include animation-delay(1);
+  }
+
+  li:nth-child(4) {
+    @include animation-delay(2);
+  }
+}
+
+// Container for the Tools & Languages section.
+#skills-wrapper {
+  background-color: rgba(0, 0, 0, .3);
+  border-radius: $borderRadius;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 100%;
+  margin: 10px auto;
+
+  .skills {
+    align-items: center;
+    display: inherit;
+    justify-content: space-between;
+    flex: 1;
+    height: 40px;
+    padding: 10px;
+
+    &:first-child {
+      @include animation-delay(0);
+    }
+    &:nth-child(2) {
+      @include animation-delay(1);
+    }
+    &:nth-child(3) {
+      @include animation-delay(2);
+    }
+    &:nth-child(4) {
+      @include animation-delay(3);
+    }
+    &:nth-child(5) {
+      @include animation-delay(4);
+    }
+  }
+
+  .skill-stars {
+    align-items: inherit;
+    display: inherit;
+    height: 20px;
+
+    span {
+      font-size: 16px;
+      text-align: center;
+      width: 20px;
+    }
+
+    span.empty-star {
+      font-size: 10px;
+    }
+  }
+}
+
+// Boxes containing the projects.
+.project-box {
+  background: rgba(255, 255, 255, .3);
+  border-radius: 0 5px 0 5px;
+  border: $smallWhiteBorder;
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  padding: 10px;
+  width: 100%;
+
+  & > a {
+    display: block;
+    margin: 10px auto;
+    width: 100%;
+    height: 160px;
+
+    img {
+      border-radius: $borderRadius;
+      display: inherit;
+      height: inherit;
+      width: inherit
+    }
+  }
+
+  & > h2 {
+    text-align: center;
+  }
+}
+
+// Unordered list that contains the images to my Social Pages.
+#contact-icons-list {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  margin: 10px 0;
+  width: 100%;
+  img {
+    display: block;
+    width: 50px;
+    &:hover {
+      animation: grow-bigger 1000ms ease-in-out infinite
+    }
+  }
+}
+
+// All elements which are within the drop-down ID are below this.
+#drop-down {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#drop-down-button {
+  background-color: #fff;
+  border-radius: $borderRadius;
+  color: #2d2d2d;
+  cursor: pointer;
+  height: 30px;
+  width: 100%;
+  &:focus, &:hover {
+    border: $smallWhiteBorder;
+    background-color: $hoverColor
+  }
+}
+
+.drop-down-content {
+  border-radius: $borderRadius;
+  background: rgba(255, 255, 255, .5);
+  border: $smallWhiteBorder;
+  display: none;
+  left: 0;
+  margin: 20px auto 20px;
+  position: relative;
+  right: 0;
+  width: 100%;
+
+  & > form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto 10px;
+    width: 100%;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+    }
+
+    label {
+      align-self: flex-start;
+      font-size: 15px;
+    }
+
+    input, textarea {
+      border-radius: $borderRadius;
+      padding: 5px;
+      width: 100%
+    }
+
+    textarea {
+      height: 80px;
+      max-width: 100%;
+      text-align: left
+    }
+
+    input[name=reset], input[name=submit-mail] {
+      background-color: #fff;
+      color: #2d2d2d;
+      cursor: pointer;
+      margin: 10px auto 0;
+      width: 40%;
+    }
+
+    input[name=submit-mail]:hover, input:focus:required:valid, textarea:focus:required:valid {
+      border: 2px solid green;
+      color: green
+    }
+
+    input[name=reset]:hover, input:focus:required:invalid, textarea:focus:required:invalid {
+      border: 2px solid #dc143c;
+      color: #dc143c
+    }
+  }
+}
+
+// JavaScript \\ Class for toggling the drop-down menu.
+.show {
+  transition: 3s;
+  display: block;
+}
+
+// JavaScript \\ Class for toggling 'this' when in the frame of the screen.
+.show-animation {
+  animation: show-on-load 2000ms forwards;
+  opacity: 0
+}
+
+footer {
+  border-top: $smallWhiteBorder;
+  color: $textColor;
+  font-size: 12px;
+  padding: 10px;
+  position: relative;
+  text-align: center
+}
+
+@media screen and (min-width: 480px) {
+
+  // Makes the width of the higher order rows 70vw.
+  main > .row {
+    .wrapper {
+      width: 80%;
+      &:first-child > figure {
+        width: 90%;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  main > .row {
+    .wrapper {
+      width: 60%;
+      &:first-child > figure {
+        width: 70%;
+      }
+    }
+  }
+
+  .introduction {
+    li {
+      text-align: center;
+    }
+
+    h2 {
+      border-bottom: $smallWhiteBorder;
+      text-align: center;
+    }
+  }
+
+  .header nav {
+    width: 35%;
+  }
+
+  .skill-stars {
+    > span {
+      font-size: 18px;
+      width: 25px;
+    }
+    > span.empty-star {
+      font-size: 12px;
+    }
+  }
+
+  input {
+    font-size: 14px;
+  }
+
+}
+
+@media screen and (min-width: 1025px) {
+
+  body {
+    font-size: 15px;
+  }
+
+  main > .row {
+    .wrapper {
+      width: 50%;
+
+      &:first-child > figure {
+        width: 70%;
+      }
+    }
+
+    &#portfolio > .wrapper {
+      width: 80%;
+    }
+
+    &#contact > .wrapper {
+      width: 40%;
+    }
+  }
+
+  .header nav {
+    ul {
+      &:hover li a {
+        text-shadow: 0 0 5px $textColor;
+      }
+
+      li {
+        & > a {
+          color: transparent;
+          text-shadow: 0 0 3px $textColor;
+          transition: all 200ms ease-in-out;
+          &:hover {
+            color: $hoverColor;
+            text-shadow: 0 0 1px $hoverColor;
+            padding-top: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .project-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+
+    .project-box {
+      max-height: 500px;
+      min-height: 400px;
+      width: 45%;
+      transform: skewX(-5deg);
+
+      & > a {
+        max-height: 30vh;
+        width: 70%;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  #skills-wrapper {
+    max-height: 150px;
+    flex-flow: column wrap;
+    display: flex;
+    justify-content: space-between;
+    transform: skewX(-10deg);
+    border-radius: 0 5px 0 5px;
+
+    .skills {
+      min-width: 45%;
+
+      &:first-child, &:nth-child(2), &:nth-child(3) {
+        border-right: 2px solid white;
+        border-radius: $borderRadius;
+        z-index: 100;
+      }
+
+      &:first-child {
+        @include animation-delay(0);
+        border-bottom-right-radius: 0;
+      }
+      &:nth-child(2) {
+        @include animation-delay(1);
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      &:nth-child(3) {
+        @include animation-delay(2);
+        border-top-right-radius: 0;
+      }
+      &:nth-child(4) {
+        @include animation-delay(3);
+      }
+      &:nth-child(5) {
+        @include animation-delay(4);
+      }
+    }
+  }
+
+  #drop-down-button {
+    width: 100%;
+    align-self: center;
+  }
+
+  #mail-form {
+
+    & > div {
+      flex-direction: row;
+      margin: 0 auto;
+      justify-content: space-around;
+    }
+
+    input {
+      height: 30px;
+    }
+
+    label {
+      align-self: center;
+      text-align: center;
+      flex: 1;
+      margin-right: 10px;
+    }
+
+    input, textarea {
+      flex: 3;
+      margin: 10px auto;
+    }
+
+    input[name=reset], input[name=submit-mail] {
+      max-width: 20%;
+      margin: 0 auto;
+    }
+  }
+
+  .introduction:first-of-type p {
+    transform: skewX(-10deg);
+    padding-top: 10px;
+  }
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Todo List</title>
+    <link rel="stylesheet" href="assets/css/watchandcode.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1>Todo List Project</h1>
+        </header>
+        <main class="main">
+            <section class="todo-form">
+                <div class="form-group flex">
+                    <input id="addTodoTextInput" type="text" placeholder="Write your todo here!">
+                    <button onclick="handlers.addTodo()" id="addTodoTextButton">Add Todo</button>
+                </div>
+
+                <div class="form-group flex">
+                    <input id="changeTodoPositionInput" type="number" placeholder="Index to change.">
+                    <input id="changeTodoTextInput" type="text" placeholder="Type your changed text here.">
+                    <button onclick="handlers.changeTodo()" id="changeTodoButton">Change Todo</button>
+                </div>
+
+                <div class="form-group flex">
+                    <input id="toggleCompletedPositionInput" type="number" placeholder="Index of todo to toggle.">
+                    <button onclick="handlers.toggleCompleted()" id="toggleCompletedPositionButton">Toggle Completed</button>
+                </div>
+                <div class="form-group flex">
+                    <button onclick="handlers.toggleAll()" id="toggleAllButton">Toggle all as completed</button>
+                </div>
+                <p class="indexHint">
+                    Hint: The first item is indexed with the number 0!
+                </p>
+            </section>
+            <section class="todos">
+                <h1 class="headerTodos">Your current todos:</h1>
+                <ul class="todo-list">
+                </ul>
+            </section>
+        </main>
+        <footer class="footer">
+            <p>&copy; 2017, Maikel van Veen.</p>
+        </footer>
+    </div>
+    <script src="assets/js/watchandcode.js"></script>
+</body>
+
+</html>

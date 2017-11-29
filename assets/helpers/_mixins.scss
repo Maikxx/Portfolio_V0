@@ -1,0 +1,3 @@
+@mixin animation-delay($seconds) {
+  animation-delay: 1s+$seconds;
+}
